@@ -44,7 +44,7 @@ const App = () => {
       ) : error ? (
         <Error />
       ) : (
-        <div>
+        <div className="body">
           <Header />
           <div className="result">
             <div>

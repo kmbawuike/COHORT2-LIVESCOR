@@ -3,13 +3,13 @@ import React from "react";
 const SideBar = props => {
   const leaguename = [];
 
-  if (leaguename.indexOf(props.leagueName) !== props.leagueName) {
-    leaguename.push(props.leagueName);
-   }
-  
-  // if (leaguename.includes(props.leagueName)) { }
-  // else { leaguename.push(props.leagueName) }
-
+  if (leaguename.indexOf(props.leagueName) === props.leagueName) {
+    return false;
+  }
+  else {
+     leaguename.push(props.leagueName);
+  }
+ 
 
   return (
     leaguename.map((item, index) => (

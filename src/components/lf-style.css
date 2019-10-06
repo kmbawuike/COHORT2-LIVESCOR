@@ -119,3 +119,6 @@ span {
   word-wrap: break-word;
   text-align: center;
 }
+.body{
+  background-color:rgb(46, 30, 30);
+}
