@@ -6,6 +6,7 @@ class Home extends Component{
     return(
       <Fragment>
         <h1>Testing</h1>
+        
         <Body />
         <Footer />
       </Fragment>
