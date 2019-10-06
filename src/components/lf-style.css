@@ -47,15 +47,18 @@ body{
   
 }
 .pac {
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   margin: 0px;
-  height: 35px;
-  padding-top: 10px;
+ 
+  padding: 0px 5px;
   cursor: pointer;
+  text-align: center;
+  word-wrap: break-word;  
+  width:400px;
 }
 .pac:hover {
   background-color: blue;
-  font-size: 22px;
+  font-size: 21px;
 }
 
 .header {
@@ -64,6 +67,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   
 }
 .logo {
@@ -73,13 +77,14 @@ body{
 }
 .logoheader {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
 
 
 }
 .list {
   padding: 10px;
+  text-align:center;
 }
 .list a {
   font-size: 18px;

@@ -11,13 +11,11 @@ const SideBar = props => {
   }
  
 
-  return (
-    leaguename.map((item, index) => (
-      <div key={index} className="jude" >
-        {item}
-      </div>)
-    )
-  )
+  return leaguename.map((item, index) => (
+    <div key={index} className="jude">
+      <p className="pac">{item}</p>
+    </div>
+  ));
 
 }
 export default SideBar;
