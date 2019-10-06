@@ -15,10 +15,10 @@ class Header extends Component {
         </div>
 
         <div className="list">
-          <a> Predict </a>
-          <a> Contact </a>
-          <a> About </a>
-          <a> Services </a>
+          <a href="#"> Predict </a >
+          <a href="#"> Contact </a >
+          <a href="#"> About </a >
+          <a href="#"> Services </a>
         </div>
     
       </main>

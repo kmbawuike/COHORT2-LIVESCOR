@@ -4,7 +4,7 @@ import "./lf-style.css";
 
 const Loading=() => {
   return (
-    <img  classsName="loading"src={load} alt=""/>
+    <img  className="loading"src={load} alt=""/>
   )
 }
 export default Loading;

@@ -11,21 +11,22 @@ const App = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  },[]);
 
   const getData = async () => {
     Setloading(!loading);
     await fetch("https://secure-lake-56026.herokuapp.com/")
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         Setscores([data.data]);
         if (data) {
+          console.log(data)
           Setloading(false);
         }
-      });
+      })
+    .catch(e=>console.log(e))
   };
-  console.log(scores);
+  
 
   return (
     <Fragment>
@@ -36,30 +37,32 @@ const App = () => {
       ) : (
         <div>
           <Header />
-        <div className="result">
-          {scores.map((score, index) =>
-            score.map((sc, i) => (
-              <SideBar
-                key={i}
-                style={{ marginLeft: "30px", color: "white" }}
-                leagueName={sc.leagueName}
-              />
-            ))
-          )}
+          <div className="result">
+            {scores.map((score, index) =>
+              score.map((sc, i) => (
+                <SideBar
+                  key={i}
+                  style={{ marginLeft: "30px", color: "white" }}
+                  leagueName={sc.leagueName}
+                  // handleleague={}
+                />
+              ))
+            )}
 
-          {scores.map((score, index) =>
-            score.map((sc, i) => (
-              <Body
-                key={i}
-                style={{ marginLeft: "30px", color: "white" }}
-                homeName={sc.homeName}
-                awayName={sc.awayName}
-                homeScore={sc.homeScore}
-                awayScore={sc.awayScore}
-                matchTime={sc.matchTime}
-              />
-            ))
-          )}
+            {scores.map((score, index) =>
+              score.map((sc, i) => (
+                <Body
+                  key={i}
+                  style={{ marginLeft: "30px", color: "white" }}
+                  homeName={sc.homeName}
+                  awayName={sc.awayName}
+                  homeScore={sc.homeScore}
+                  awayScore={sc.awayScore}
+                  matchTime={sc.matchTime}
+                  minute={sc.extraExplain.minute}
+                />
+              ))
+            )}
           </div>
           <Footer />
         </div>
