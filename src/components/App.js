@@ -4,29 +4,36 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
 import Loading from "./loading";
+import Error from "./error";
 
 const App = () => {
   const [scores, Setscores] = useState([]);
   const [loading, Setloading] = useState(false);
+  const [error, Seterror] = useState(false);
 
   useEffect(() => {
     getData();
-  },[]);
+  }, []);
 
   const getData = async () => {
     Setloading(!loading);
+   
     await fetch("https://secure-lake-56026.herokuapp.com/")
       .then(res => res.json())
       .then(data => {
         Setscores([data.data]);
         if (data) {
-          console.log(data)
+          console.log(data);
           Setloading(false);
+             Seterror(false);
         }
       })
-    .catch(e=>console.log(e))
+      .catch(e => {
+        console.log(e);
+        Setloading(false);
+        Seterror(!error);
+      });
   };
-  
 
   return (
     <Fragment>
@@ -34,35 +41,39 @@ const App = () => {
         <center>
           <Loading />
         </center>
+      ) : error ? (
+        <Error />
       ) : (
         <div>
           <Header />
           <div className="result">
-            {scores.map((score, index) =>
-              score.map((sc, i) => (
-                <SideBar
-                  key={i}
-                  style={{ marginLeft: "30px", color: "white" }}
-                  leagueName={sc.leagueName}
-                  // handleleague={}
-                />
-              ))
-            )}
-
-            {scores.map((score, index) =>
-              score.map((sc, i) => (
-                <Body
-                  key={i}
-                  style={{ marginLeft: "30px", color: "white" }}
-                  homeName={sc.homeName}
-                  awayName={sc.awayName}
-                  homeScore={sc.homeScore}
-                  awayScore={sc.awayScore}
-                  matchTime={sc.matchTime}
-                  minute={sc.extraExplain.minute}
-                />
-              ))
-            )}
+            <div>
+              {scores.map((score, index) =>
+                score.map((sc, i) => (
+                  <SideBar
+                    key={i}
+                    style={{ marginLeft: "30px", color: "white" }}
+                    leagueName={sc.leagueName}
+                  />
+                ))
+              )}
+            </div>
+            <div className=" base">
+              {scores.map((score, index) =>
+                score.map((sc, i) => (
+                  <Body
+                    key={i}
+                    style={{ marginLeft: "30px", color: "white" }}
+                    homeName={sc.homeName}
+                    awayName={sc.awayName}
+                    homeScore={sc.homeScore}
+                    awayScore={sc.awayScore}
+                    matchTime={sc.matchTime}
+                    minute={sc.extraExplain.minute}
+                  />
+                ))
+              )}
+            </div>
           </div>
           <Footer />
         </div>
