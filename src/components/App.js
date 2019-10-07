@@ -59,7 +59,6 @@ const App = () => {
         <Error />
       ) : (
         <div className="body">
-          <Header />
           <Head />
           <div className="result">
             <div>

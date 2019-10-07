@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
-import App from './App'
-import About from './contact'
-import Contact from './about'
+import App from "./App";
+import About from "./contact";
+import Contact from "./about";
+import Header from "./Header";
 const Pagenotfoud = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <div>
+        <Header />
         <Switch>
           <Route path="/" component={App} exact={true} />
           <Route path="/about" component={About} />

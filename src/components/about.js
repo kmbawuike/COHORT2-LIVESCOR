@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 const About = () => {
   return (
@@ -9,6 +10,7 @@ const About = () => {
         learnFactory cohortv2.2 interns happened to do this as a project given
         to them by thier superior
       </p>
+      <Footer />
     </div>
   );
 };
