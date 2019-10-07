@@ -127,3 +127,15 @@ span {
 .body{
   background-color:rgb(46, 30, 30);
 }
+.contact{
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px gray;
+  width: 100%;
+  height:50%;
+  margin-top:30px;
+  text-align: center;
+}
+.contact h1{
+  background-color: gray;
+  color:white;
+}
