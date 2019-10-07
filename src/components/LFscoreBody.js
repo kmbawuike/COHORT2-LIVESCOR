@@ -11,7 +11,7 @@ const Body = props => {
         <p>vs</p>
         <p>{props.awayScore}</p>
         <p className="home">{props.awayName}</p>
-        <p>{props.minute}</p>
+        {props.minute == 0?<p>FT</p>:props.minute}
       </div>
     </div>
   );
