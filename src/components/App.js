@@ -7,17 +7,26 @@ import Loading from "./loading";
 import Error from "./error";
 
 const App = () => {
+  // creating states for Data storage, loading, and error page.
+  // data storage
   const [scores, Setscores] = useState([]);
+  // loading state
   const [loading, Setloading] = useState(false);
+  // erroe state
   const [error, Seterror] = useState(false);
+
+  // the call of the Api request
 
   useEffect(() => {
     getData();
   }, []);
 
+  // setting the Api request
+
   const getData = async () => {
+    // changed the state of loading
+
     Setloading(!loading);
-   
     await fetch("https://secure-lake-56026.herokuapp.com/")
       .then(res => res.json())
       .then(data => {
@@ -25,9 +34,11 @@ const App = () => {
         if (data) {
           console.log(data);
           Setloading(false);
-             Seterror(false);
+          // changed the state of error
+          Seterror(false);
         }
       })
+      // error catch
       .catch(e => {
         console.log(e);
         Setloading(false);
@@ -37,6 +48,8 @@ const App = () => {
 
   return (
     <Fragment>
+      {/* if laoding is true display loading sign else if error detected display
+      error message else display the site content */}
       {loading ? (
         <center>
           <Loading />
@@ -48,8 +61,12 @@ const App = () => {
           <Header />
           <div className="result">
             <div>
+              {/* redering the stored data by mapping the stored data  which 
+              only the legue name was passed as a props to the sidebar*/}
+
               {scores.map((score, index) =>
                 score.map((sc, i) => (
+                  // passing props to the sidebar
                   <SideBar
                     key={i}
                     style={{ marginLeft: "30px", color: "white" }}
@@ -58,6 +75,9 @@ const App = () => {
                 ))
               )}
             </div>
+            {/* redering the stored data by mapping the stored data  and passing the right 
+            information as a props to the body*/}
+
             <div className=" base">
               {scores.map((score, index) =>
                 score.map((sc, i) => (
