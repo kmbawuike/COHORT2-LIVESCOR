@@ -1,6 +1,9 @@
 import React from "react";
 import "./lf-style.css";
 
+// Setting the passed props from app.js to Body
+// and rendering the passed props to page
+
 const Body = props => {
   return (
     <div className="strip">
@@ -11,7 +14,10 @@ const Body = props => {
         <p>vs</p>
         <p>{props.awayScore}</p>
         <p className="home">{props.awayName}</p>
-        {props.minute == 0?<p>FT</p>:props.minute}
+
+        {/* setting the match to FT if match is done */}
+
+        {props.minute == 0 ? <p>FT</p> : props.minute}
       </div>
     </div>
   );

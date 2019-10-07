@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "./img/lf.svg";
+import {NavLink} from 'react-router-dom'
 
 class Header extends Component {
   
@@ -9,8 +10,7 @@ class Header extends Component {
         <div className="logoheader">
           <img src={logo} className="logo" alt=""/>
           <h2>
-            {" "}
-            <span>LearnFactory</span> Scores{" "}
+            <span>LearnFactory</span> Scores
           </h2>
         </div>
 

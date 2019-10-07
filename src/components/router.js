@@ -1,6 +1,8 @@
 import React from "react";
 import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
 import App from './App'
+import About from './contact'
+import Contact from './About'
 const Pagenotfoud = () => {
   return (
     <div>
@@ -14,6 +16,8 @@ const Routes = () => {
       <div>
         <Switch>
           <Route path="/" component={App} exact={true} />
+          <Route path="/" component={About} />
+          <Route path="/" component={Contact} />
           <Route component={Pagenotfoud} />
         </Switch>
       </div>
