@@ -91,11 +91,6 @@ body{
   padding: 11px;
   cursor: pointer;
 }
-a:hover {
-  color: rgba(74, 71, 233, 0.986);
-  background: white;
-  transition: 2s;
-}
 span {
   color: rgba(84, 81, 252, 0.986);
 }
@@ -138,4 +133,11 @@ span {
 .contact h1{
   background-color: gray;
   color:white;
+}
+.active{
+  color: white;
+  background-color: rgba(84, 81, 252, 0.986);
+}
+.headerNav{
+  background-color: rgb(28, 31, 28);
 }

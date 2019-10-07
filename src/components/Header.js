@@ -7,16 +7,20 @@ class Header extends Component {
     return (
       <main className="header">
         <div className="logoheader">
-          <img src={logo} className="logo" alt="" />
-          <h2>
-            <span>LearnFactory</span> Scores
-          </h2>
+          <NavLink to='/'  className='headerNav' exact={true}>
+            <img src={logo} className="logo" alt="" />
+          </NavLink>
+          <NavLink to="/" className='headerNav' exact={true}>
+            <h2>
+              <span>LearnFactory</span> Scores
+            </h2>
+          </NavLink>
         </div>
 
         <div className="list">
-          <NavLink> Predict </NavLink>
-          <NavLink to="/contact"> Contact </NavLink>
-          <NavLink to="/about"> About </NavLink>
+          <NavLink > Predict </NavLink>
+          <NavLink to="/contact" > Contact </NavLink>
+          <NavLink to="/about" ActiveClassName='active'> About </NavLink>
         </div>
       </main>
     );

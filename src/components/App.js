@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
 import Loading from "./loading";
+import Head from "./Head";
 import Error from "./error";
 
 const App = () => {
@@ -58,22 +59,13 @@ const App = () => {
         <Error />
       ) : (
         <div className="body">
-          <Header />
+          <Head />
           <div className="result">
             <div>
               {/* redering the stored data by mapping the stored data  which 
               only the legue name was passed as a props to the sidebar*/}
-
-              {scores.map((score, index) =>
-                score.map((sc, i) => (
-                  // passing props to the sidebar
-                  <SideBar
-                    key={i}
-                    style={{ marginLeft: "30px", color: "white" }}
-                    leagueName={sc.leagueName}
-                  />
-                ))
-              )}
+              
+              <SideBar />
             </div>
             {/* redering the stored data by mapping the stored data  and passing the right 
             information as a props to the body*/}
